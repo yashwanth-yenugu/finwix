@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.divider {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+
+  &::after,
+  &::before {
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;
+  }
+  &::after {
+    margin-left: 10px;
+  }
+  &::before {
+    margin-right: 10px;
+  }
+}

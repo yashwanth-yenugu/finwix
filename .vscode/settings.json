@@ -1,3 +1,7 @@
 {
-  "cSpell.words": ["Finwix"]
+  "cSpell.words": ["deeppurple", "Finwix"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  }
 }
