@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { ILogin } from '../_models/login';
 import { AuthService } from '../_services/auth.service';
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private service: AuthService,
     private tokenStorage: TokenStorageService,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -37,5 +39,9 @@ export class LoginComponent implements OnInit {
         this.tokenStorage.saveUser(data);
         this.router.navigate(['/home']);
       });
+  }
+
+  signup() {
+    this.snackBar.open('Signup coming soon.. Stay tuned!!', 'Okay');
   }
 }
