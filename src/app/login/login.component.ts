@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginSubmit() {
-    console.log(this.loginForm.value);
     this.service
       .login(this.loginForm.value as ILogin)
       .subscribe((data: any) => {
