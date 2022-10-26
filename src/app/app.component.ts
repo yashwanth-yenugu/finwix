@@ -17,14 +17,16 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.isLoggedIn = !!this.tokenStorageService.getToken();
-    if (this.isLoggedIn) {
-      this.router.navigateByUrl('/home');
-    }
+    this.tokenStorageService.isLoggedIn$.subscribe((value) => {
+      this.isLoggedIn = value;
+      if (this.isLoggedIn) {
+        this.router.navigateByUrl('/home');
+      }
+    });
   }
 
   logout(): void {
     this.tokenStorageService.signOut();
-    location.reload();
+    this.router.navigateByUrl('/login');
   }
 }
